@@ -2,6 +2,16 @@
   "name": "my-habits",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run-script build"
+    }
+  },
+  "lint-staged": {
+    "**/*.tsx": "prettier --write",
+    "**/*.ts": "prettier --write"
+  },
   "dependencies": {
     "@emotion/styled": "^11.0.0",
     "@material-ui/core": "^4.11.3",
@@ -12,7 +22,10 @@
     "@types/node": "^12.19.15",
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
+    "husky": "^4.3.8",
     "json-server": "^0.16.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
